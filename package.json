@@ -60,5 +60,10 @@
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/main.d.mts"
+  "types": "./dist/main.d.mts",
+  "pnpm": {
+    "overrides": {
+      "vitest>tinyexec": "link:./"
+    }
+  }
 }

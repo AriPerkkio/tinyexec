@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  vitest>tinyexec: link:./
+
 importers:
 
   .:
@@ -2319,7 +2322,7 @@ snapshots:
       picomatch: 4.0.3
       std-env: 4.0.0
       tinybench: 2.9.0
-      tinyexec: 1.0.4
+      tinyexec: 'link:'
       tinyglobby: 0.2.15
       tinyrainbow: 3.1.0
       vite: 8.0.0(@types/node@25.5.0)
