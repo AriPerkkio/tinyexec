@@ -15,9 +15,10 @@ jobs:
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: latest
-      - run: npm ci
-      - run: npm run format:check
-      - run: npm run lint
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+      - run: pnpm install
+      - run: pnpm format:check
+      - run: pnpm lint
   build:
     name: Build ${{ matrix.node-version }} @ ${{ matrix.os }}
 
@@ -37,5 +38,6 @@ jobs:
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run test
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+      - run: pnpm install
+      - run: pnpm test
